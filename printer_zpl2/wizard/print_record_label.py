@@ -18,9 +18,13 @@ class PrintRecordLabel(models.TransientModel):
         comodel_name="printing.label.zpl2",
         string="Label",
         required=True,
-        domain=lambda self: [
-            ("model_id.model", "=", self.env.context.get("active_model"))
-        ],
+        # Written against `active_model_id` instead of the context: the return
+        # of `get_views` may only depend on the view types, the access rights,
+        # the options, the context lang and the view refs, so a domain reading
+        # `active_model` off the context reaches the client frozen to
+        # [("model_id.model", "=", null)] and the field offers no label. The
+        # client evaluates this one on the record it holds.
+        domain="[('model_id', '=', active_model_id)]",
         help="Label to print.",
     )
     active_model_id = fields.Many2one(
