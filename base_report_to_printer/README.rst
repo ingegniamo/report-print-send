@@ -164,34 +164,34 @@ Usage
 
 Guidelines for use:
 
-- To use a specific printing backend (e.g. CUPS), make sure the
-  corresponding module (such as ``base_report_to_printer_cups``) is
-  installed and configured.
-- To print a report on a specific printer or tray, you can configure
-  defaults in *Settings > Printing > Reports*.
-- To define user-specific behaviour, go to *Settings > Printing >
-  Reports* and configure *Specific actions per user*.
-- Each user can also select a default action, printer or tray in their
-  *Preferences*.
-- When no tray is configured for a report or a user, the default tray
-  defined by the printing backend (e.g. the CUPS server) will be used.
+-  To use a specific printing backend (e.g. CUPS), make sure the
+   corresponding module (such as ``base_report_to_printer_cups``) is
+   installed and configured.
+-  To print a report on a specific printer or tray, you can configure
+   defaults in *Settings > Printing > Reports*.
+-  To define user-specific behaviour, go to *Settings > Printing >
+   Reports* and configure *Specific actions per user*.
+-  Each user can also select a default action, printer or tray in their
+   *Preferences*.
+-  When no tray is configured for a report or a user, the default tray
+   defined by the printing backend (e.g. the CUPS server) will be used.
 
 Notes
 -----
 
-- This module (``base_report_to_printer``) only provides the **base
-  framework**.
-- To connect with a real print system, you must install an additional
-  backend module (e.g. ``base_report_to_printer_cups`` for CUPS).
-- Other backend modules can be developed to support different print
-  protocols or environments.
+-  This module (``base_report_to_printer``) only provides the **base
+   framework**.
+-  To connect with a real print system, you must install an additional
+   backend module (e.g. ``base_report_to_printer_cups`` for CUPS).
+-  Other backend modules can be developed to support different print
+   protocols or environments.
 
 Known issues / Roadmap
 ======================
 
-- With threaded printing there's no download fallback when the issue
-  isn't detected by the CUPS Odoo backend. To able to do it, we would
-  need to notify the bus or use web_notify for it.
+-  With threaded printing there's no download fallback when the issue
+   isn't detected by the CUPS Odoo backend. To able to do it, we would
+   need to notify the bus or use web_notify for it.
 
 Changelog
 =========
@@ -199,26 +199,26 @@ Changelog
 19.0.1.0.0 (2025-12-18)
 -----------------------
 
-- [REF] Extracted all CUPS-specific functionality into a dedicated
-  module: ``base_report_to_printer_cups``.
-- [ADD] Introduced a base abstraction layer for report-to-printer, to
-  allow adding new backends (protocols) without modifying the core
-  module.
-- [IMP] Improved configuration instructions (global, per-user,
-  per-report, and per user+report).
-- [CLEAN] Updated documentation and module description to reflect new
-  architecture.
-- 
+-  [REF] Extracted all CUPS-specific functionality into a dedicated
+   module: ``base_report_to_printer_cups``.
+-  [ADD] Introduced a base abstraction layer for report-to-printer, to
+   allow adding new backends (protocols) without modifying the core
+   module.
+-  [IMP] Improved configuration instructions (global, per-user,
+   per-report, and per user+report).
+-  [CLEAN] Updated documentation and module description to reflect new
+   architecture.
+-  
 
 13.0.1.0.0 (2019-09-30)
 -----------------------
 
-- [RELEASE] Port from V12.
+-  [RELEASE] Port from V12.
 
 12.0.1.0.0 (2018-02-04)
 -----------------------
 
-- [RELEASE] Port from V11.
+-  [RELEASE] Port from V11.
 
 Bug Tracker
 ===========
@@ -246,29 +246,33 @@ Authors
 Contributors
 ------------
 
-- Ferran Pegueroles <ferran@pegueroles.com>
-- Albert Cervera i Areny <albert@nan-tic.com>
-- Davide Corio <davide.corio@agilebg.com>
-- Lorenzo Battistini <lorenzo.battistini@agilebg.com>
-- Yannick Vaucher <yannick.vaucher@camptocamp.com>
-- Lionel Sausin <ls@numerigraphe.com>
-- Guewen Baconnier <guewen.baconnier@camptocamp.com>
-- Dave Lasley <dave@laslabs.com>
-- Sylvain Garancher <sylvain.garancher@syleam.fr>
-- Jairo Llopis <jairo.llopis@tecnativa.com>
-- Graeme Gellatly <graeme@o4sb.com>
-- Rod Schouteden <rod@schout-it.be>
-- Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
-- Matias Peralta <mnp@adhoc.com.ar>
-- Hughes Damry <hughes.damry@acsone.eu>
-- Akim Juillerat <akim.juillerat@camptocamp.com>
-- Jacques-Etienne Baudoux (BCIM) <je@bcim.be>
-- Tris Doan <tridm@trobz.com>
-- Sergij Pfaifer <s.pfaifer@deinetuer.de>
-- Miquel Alzanillas <miquel.alzanillas@nagarro.com>
-- `Studio73 <https://studio73.es>`__:
+-  Ferran Pegueroles <ferran@pegueroles.com>
+-  Albert Cervera i Areny <albert@nan-tic.com>
+-  Davide Corio <davide.corio@agilebg.com>
+-  Lorenzo Battistini <lorenzo.battistini@agilebg.com>
+-  Yannick Vaucher <yannick.vaucher@camptocamp.com>
+-  Lionel Sausin <ls@numerigraphe.com>
+-  Guewen Baconnier <guewen.baconnier@camptocamp.com>
+-  Dave Lasley <dave@laslabs.com>
+-  Sylvain Garancher <sylvain.garancher@syleam.fr>
+-  Jairo Llopis <jairo.llopis@tecnativa.com>
+-  Graeme Gellatly <graeme@o4sb.com>
+-  Rod Schouteden <rod@schout-it.be>
+-  Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
+-  Matias Peralta <mnp@adhoc.com.ar>
+-  Hughes Damry <hughes.damry@acsone.eu>
+-  Akim Juillerat <akim.juillerat@camptocamp.com>
+-  Jacques-Etienne Baudoux (BCIM) <je@bcim.be>
+-  Tris Doan <tridm@trobz.com>
+-  Sergij Pfaifer <s.pfaifer@deinetuer.de>
+-  Miquel Alzanillas <miquel.alzanillas@nagarro.com>
+-  `Studio73 <https://studio73.es>`__:
 
-  - Eugenio Micó <eugenio@studio73.es>
+   -  Eugenio Micó <eugenio@studio73.es>
+
+-  `STeSI Consulting <https://stesi.consulting>`__:
+
+   -  Michele Di Croce <dicroce.m@stesi.consulting>
 
 Other credits
 -------------

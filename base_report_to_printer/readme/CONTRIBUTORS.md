@@ -20,3 +20,5 @@
 - Miquel Alzanillas  \<<miquel.alzanillas@nagarro.com>\>
 - [Studio73](https://studio73.es):
   - Eugenio Micó \<<eugenio@studio73.es>\>
+- [STeSI Consulting](https://stesi.consulting):
+  - Michele Di Croce \<<dicroce.m@stesi.consulting>\>
