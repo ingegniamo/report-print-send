@@ -2,7 +2,12 @@ from openupgradelib import openupgrade
 
 
 @openupgrade.migrate()
-def migrate(env, version):
+def migrate(cr, version):
+    # 19.0: odoo/modules/migration.py accetta come nomi dei parametri solo
+    # `cr`/`_cr` e `version`/`_version`, e inspect.signature() segue
+    # `__wrapped__` fino a questa funzione invece di fermarsi al wrapper di
+    # openupgradelib. Il decoratore continua a passare un env.
+    env = cr
     if openupgrade.table_exists(
         env.cr, "printing_tray"
     ) and not openupgrade.table_exists(env.cr, "printing_tray_input"):
